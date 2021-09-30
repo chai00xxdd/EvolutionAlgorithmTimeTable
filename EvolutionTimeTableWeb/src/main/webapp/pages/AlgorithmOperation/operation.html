@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="windows-1255">
+    <title>Insert title here</title>
+    <script src="../../common/jquery-3.6.0.min.js"></script>
+    <script src="../../common/utils.js"></script>
+    <script src="../../common/Chart.js"></script>
+    <link rel="stylesheet" href="../../common/app.css">
+
+
+    <link rel="stylesheet" href="operation.css">
+    <link rel="stylesheet" href="bootstrap.css">
+
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="../../chat/chat.css">
+
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a class="active" href="../UserPage/user.html">Home</a>
+        <a href="" id="viewProblemLink">View Problem</a>
+        <a id="operationLink" href="">Algorithm Operation</a>
+        <a id="confuigrationLink">Confuigration</a>
+
+    </div>
+
+
+
+
+
+    <div id="Algorithm Operation">
+        <h1>Algorithm Operation</h1>
+        <div id="buttonsDiv">
+            <button id="RunButton">Run</button>
+            <button id="ResumeButton">Resume</button>
+            <button id="PauseButton">Pause/Stop</button>
+            <button id="StopButton" hidden>Stop</button>
+
+        </div>
+
+
+
+
+
+
+
+        <div id="algorithmStatsitics">
+
+
+
+            <div class="DataBox" id="stopConitionsProgressDiv">
+
+            </div>
+
+            <div class="DataBox">
+
+                <p id="fitness"> best Fitness:50 </p>
+            </div>
+
+            <div class="DataBox">
+                <p id="generations"> generations:50 </p>
+            </div>
+
+            <div class="DataBox">
+                <p id="time"> time:50 </p>
+            </div>
+
+        </div>
+
+        <div id="operationMessage" style="margin-top:10px">
+
+        </div>
+
+
+
+
+        <div id="ChartDiv">
+            <canvas id="myChart"></canvas>
+
+        </div>
+        <br>
+        <br>
+        <br>
+    </div> <!-- algorithm operation div ends-->
+
+    <button id="bestSolutionButton">Get BestSolution</button>
+
+
+    <div id="bestSolutionDiv" style="min-height: 700px;">
+        <h2 id="bestSolutionErrorLabel"></h2>
+        <div id="bestSolutionGeneralDetails">General Details</div>
+
+
+        <div class="tab" id="BestSolutionTabsPanel">
+            <button class="tablinks" onclick="openCity(event, 'RawTab')" id="RawTabButton">Raw</button>
+            <button class="tablinks" onclick="openCity(event, 'Teacher')">Teacher</button>
+            <button class="tablinks" onclick="openCity(event, 'Class')">Class</button>
+            <button class="tablinks" onclick="openCity(event, 'Rules')">Rules</button>
+        </div>
+        <div id="RawTab" class="tabcontent">
+
+        </div>
+
+        <div id="Teacher" class="tabcontent">
+            <h3>Teacher:</h3>
+            <select name="cars" id="teachersComoBox">
+
+            </select>
+            <div id="TeacherTableDiv"></div>
+        </div>
+
+        <div id="Class" class="tabcontent">
+            <h3>Class:</h3>
+            <select name="cars" id="classesComoBox">
+
+            </select>
+
+            <div id="ClassTableDiv"></div>
+
+        </div>
+
+        <div id="Rules" class="tabcontent">
+
+            <table class="rtable" id="mytable">
+                <thead>
+                    <tr>
+                        <th>Browser</th>
+                        <th>Sessions</th>
+                        <th>Percentage </th>
+                        <th>New Users</th>
+                        <th>Avg. Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chrome</td>
+                        <td>9,562</td>
+                        <td>68.81%</td>
+                        <td>7,895</td>
+                        <td>01:07</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox</td>
+                        <td>2,403</td>
+                        <td>17.29%</td>
+                        <td>2,046</td>
+                        <td>00:59</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+    <!--Chat -->
+
+    <section id="chatSection">
+
+        <button class="chat-btn chatButtons">
+            <i class="material-icons"> comment </i>
+        </button>
+
+        <div class="chat-popup ">
+
+            <div class="chat-area" id="chatarea">
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="chatInput">
+                <button class="submit chatButtons"> <i class="material-icons"> send</i></button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+</body>
+<script src="../../chat/chat.js"></script>
+<script src="../../common/app.js"></script>
+<script src="operation.js"></script>
+
+
+
+</html>

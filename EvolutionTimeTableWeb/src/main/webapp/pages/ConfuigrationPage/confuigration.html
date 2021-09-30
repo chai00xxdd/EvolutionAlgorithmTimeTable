@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <link rel="stylesheet" href="../../common/bootstrap.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="../../chat/chat.css">
+    <link rel="stylesheet" href="../../common/app.css">
+    <script src="../../common/app.js"></script>
+    <script src="../../common/utils.js"></script>
+    <link rel="stylesheet" href="confuigration.css">
+
+    <script src="../../common/jquery-3.6.0.min.js"></script>
+    <title>Configuration</title>
+</head>
+
+<body>
+    <div class="topnav" id="menubar">
+        <a class="active" href="../UserPage/user.html">Home</a>
+        <a href="" id="viewProblemLink">View Problem</a>
+        <a id="operationLink">Algorithm Operation</a>
+        <a id="confuigrationLink" href="">Confuigration</a>
+    </div>
+    <div class='ripple-background'>
+        <div class='circle xxlarge shade1'></div>
+        <div class='circle xlarge shade2'></div>
+        <div class='circle large shade3'></div>
+        <div class='circle mediun shade4'></div>
+        <div class='circle small shade5'></div>
+    </div>
+    <section style="margin-top: 50px;" id="configContainer">
+
+        <div class="container">
+
+            <!--Population-->
+
+            <div id="PopulationDiv" class="border-bottom" style="padding-bottom: 20px; margin-bottom: 10px;">
+                <h2>Population</h2>
+
+                <form class="form-inline" id="populationForm" method="POST">
+
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="populationTextBox"
+                        placeholder="population">
+
+                    <button type="submit" class="btn btn-primary mb-2">Update</button>
+
+                </form>
+                <h3 style="text-align: cetner;" id="populationLabel">populationLabel</h3>
+
+
+            </div>
+
+            <!--Selection-->
+            <div id="SelectionDiv" class="border-bottom" style="padding-bottom: 20px; margin-bottom: 10px;">
+                <h2>Selection</h2>
+
+                <form id="selectionForm" method="POST">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="selectionComboBox">Selection</label>
+                            <select id="selectionComboBox" class="form-control">
+                                <option selected>Truncation</option>
+                                <option>RouletteWheel</option>
+                                <option>Tournemant</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="ellitismTextBox">Ellitism</label>
+                            <input type="text" class="form-control" id="ellitismTextBox">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="selectionParemterTextBox" id="selectionParameterNameLabel">Top Percent</label>
+                            <input type="text" class="form-control" id="selectionParemterTextBox">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <h2 id="selectionLabel">selectionLabel</h2>
+                </form>
+
+            </div>
+            <!--CroosOver-->
+            <div id="crossOverDiv" class="border-bottom" style="padding-bottom: 20px; margin-bottom: 10px;">
+                <h2>CrossOver</h2>
+
+                <form id="crossOverForm" method="POST">
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="crossoverComboBox">CrossOver</label>
+                            <select id="crossoverComboBox" class="form-control">
+                                <option selected>DayTimeOriented</option>
+                                <option selected>AspectOriented</option>
+
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="cuttingPointsTextBox">Cutting Points</label>
+                            <input type="text" class="form-control" id="cuttingPointsTextBox">
+                        </div>
+
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="aspectComboBox" id="aspectNameLabel">Aspect Orientation:</label>
+                            <select id="aspectComboBox" class="form-control">
+                                <option selected>TEACHER</option>
+                                <option selected>CLASS</option>
+
+                            </select>
+                        </div>
+                    </div>
+                    <!--row ends-->
+
+                    <button type="submit" class="btn btn-primary">Update</button>
+                    <h2 id="crossoverLabel">crossoverLabel</h2>
+                </form>
+
+            </div>
+            <!--Mutations-->
+            <div id="mutationsDiv" class="border-bottom" style="padding-bottom: 20px; margin-bottom: 10px;">
+
+                <h2>Mutation Table</h2>
+                <div id="mutationsTableDiv" >
+
+                </div>
+                <div class="form-row">
+                    <form class="form-inline" id="mutationsForm" method="POST">
+
+                        <select class="custom-select mb-2 mr-sm-2" id="mutationComboBox">
+                            <option selected value="Flipping">Flipping</option>
+                            <option value="Sizer">Sizer</option>
+                        </select>
+
+                        <input type="text" class="form-control mb-2 mr-sm-2" id="mutationProbalityTextBox"
+                            placeholder="probality">
+
+                </div>
+
+                <div class="form-row" style="margin-top: 10px;">
+                    <div class="form-group mb-2 mr-sm-2" id="componentDiv">
+                        <label for="crossoverComboBox">Component</label>
+                        <select id="mutationFlippingComponentComboBox" class="form-control">
+                            <option selected>D</option>
+                            <option>H</option>
+                            <option>T</option>
+                            <option>C</option>
+                            <option>S</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                        <label for="mutationParameterTextBox" id="mutationParameterName">MaxTupples</label>
+                        <input type="text" class="form-control" id="mutationParameterTextBox">
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary mb-2">Add Mutation</button>
+                </form>
+                <h2 style="text-align: cetner;" id="mutationsLabel"></h2>
+
+
+            </div>
+            <!--Mutations Div Ends-->
+
+            <div id="StopConditionsDiv" style ="margin-bottom: 200px;">
+                <h2>StopConditions</h2>
+                <div id="stopConditionsTableDiv">
+
+                </div>
+                <!--Stop Conditoins Table Ends-->
+                <h3 id="stopConditionsErrorLabel"></h3>
+            </div>
+
+        </div>
+        <!--Container Div Ends-->
+
+    </section>
+
+
+    <!--Chat-->
+    <section>
+
+        <button class="chat-btn chatButtons">
+            <i class="material-icons"> comment </i>
+        </button>
+
+        <div class="chat-popup ">
+
+            <div class="chat-area" id="chatarea">
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="chatInput">
+                <button class="submit chatButtons"> <i class="material-icons"> send</i></button>
+            </div>
+        </div>
+    </section>
+</body>
+<script src="../../chat/chat.js"></script>
+<script src="confuigration.js"></script>
+
+</html>

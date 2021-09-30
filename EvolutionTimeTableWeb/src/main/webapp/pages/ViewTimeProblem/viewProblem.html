@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../../common/jquery-3.6.0.min.js"></script>
+    <script src="../../common/utils.js"></script>
+    <script src="../../common/app.js"></script>
+    <link rel="stylesheet" href="../../common/bootstrap.css">
+    <link rel="stylesheet" href="../../common/app.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="../../chat/chat.css">
+    <link rel="stylesheet" href="viewProblem.css">
+
+
+
+    <title>ViewProblemDude</title>
+
+</head>
+
+<body>
+    <div class="topnav" id="menuBar">
+        <a class="active" href="../UserPage/user.html">Home</a>
+        <a href="" id="viewProblemLink">View Problem</a>
+        <a id="operationLink">Algorithm Operation</a>
+        <a id="confuigrationLink">Confuigration</a>
+
+    </div>
+
+    <section id="contenetSection">
+        <div class="container">
+
+            <div id="pageTitle">
+                <h1 id=>Time Problem View Page</h1>
+
+            </div>
+            <div id="timeAttributes">
+                <h2>Time Attributes:</h2>
+                <div id="attributesContent"></div>
+            </div>
+            <div id="teachersDiv">
+                <h2>Teachers:</h2>
+                <div id="teachersContent"></div>
+            </div>
+            <div id="subjectsDiv">
+                <h2>Subjects:</h2>
+                <div id="subjectsContent"></div>
+            </div>
+            <div id="classesDiv">
+                <h2>Classes:</h2>
+                <div id="classesContent"></div>
+            </div>
+            <h2>Rules:</h2>
+            <div id="rulesDiv">
+
+
+            </div>
+
+            <div id="usersRunningProblemDiv">
+                <h1 id="usersProblemsTitle"></h1>
+                <table id="usersProblemsTable" class="rtable cancelScrollPane"></table>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- View Users Best Solutions -->
+
+    <div id="bestSolutionDiv" class="container">
+        <h2 id="bestSolutionErrorLabel"></h2>
+        <div id="bestSolutionGeneralDetails">General Details</div>
+
+
+        <div class="tab" id="BestSolutionTabsPanel">
+            <button class="tablinks" onclick="openCity(event, 'RawTab')" id="RawTabButton">Raw</button>
+            <button class="tablinks" onclick="openCity(event, 'Teacher')">Teacher</button>
+            <button class="tablinks" onclick="openCity(event, 'Class')">Class</button>
+            <button class="tablinks" onclick="openCity(event, 'Rules')">Rules</button>
+        </div>
+        <div id="RawTab" class="tabcontent">
+
+        </div>
+
+        <div id="Teacher" class="tabcontent">
+            <h3>Teacher:</h3>
+            <select name="cars" id="teachersComoBox">
+
+            </select>
+            <div id="TeacherTableDiv"></div>
+        </div>
+
+        <div id="Class" class="tabcontent">
+            <h3>Class:</h3>
+            <select name="cars" id="classesComoBox">
+
+            </select>
+
+            <div id="ClassTableDiv"></div>
+
+        </div>
+
+        <div id="Rules" class="tabcontent">
+
+            <table class="rtable" id="mytable">
+                <thead>
+                    <tr>
+                        <th>Browser</th>
+                        <th>Sessions</th>
+                        <th>Percentage </th>
+                        <th>New Users</th>
+                        <th>Avg. Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chrome</td>
+                        <td>9,562</td>
+                        <td>68.81%</td>
+                        <td>7,895</td>
+                        <td>01:07</td>
+                    </tr>
+                    <tr>
+                        <td>Firefox</td>
+                        <td>2,403</td>
+                        <td>17.29%</td>
+                        <td>2,046</td>
+                        <td>00:59</td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+
+
+        </div>
+    </div>
+    <!--best solution div ends-->
+
+    <!--Configuration OF User-->
+    <div id="configContainer" class="container">
+
+        <h1 id="configTitle">Confuigration</h1>
+
+        <div id="configDiv"></div>
+
+    </div>
+
+    <!--Chat -->
+
+    <section id="chatSection">
+
+        <button class="chat-btn chatButtons">
+            <i class="material-icons"> comment </i>
+        </button>
+
+        <div class="chat-popup ">
+
+            <div class="chat-area" id="chatarea">
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="chatInput">
+                <button class="submit chatButtons"> <i class="material-icons"> send</i></button>
+            </div>
+        </div>
+    </section>
+
+</body>
+<script src="usersProblemsTable.js"></script>
+<script src="../../chat/chat.js"></script>
+<script src="viewProblem.js"></script>
+
+</html>

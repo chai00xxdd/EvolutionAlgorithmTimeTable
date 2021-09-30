@@ -1,0 +1,98 @@
+package evolution.timetable.rule;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import Math.HomoGraphicFunction;
+import evolution.timetable.TimeTableSolution;
+import school.Course;
+import school.Leacture;
+import school.SchoolClass;
+
+public class SatisFactory extends Rule {
+
+	public SatisFactory(double weight, RuleType type) {
+		super(weight, type);
+		
+	}
+
+	@Override
+	public RuleResult applyOnDNA(TimeTableSolution dna) {
+		
+		if(dna.getClasses().size()==0 )
+		{
+			return new RuleResult(1,getWeight());//empty true
+		}
+		double maxRuleGrade= dna.getClasses().size();
+		double ruleGrade=0;
+		Map<SchoolClass,Map<Course,Integer>> allClassesCourseRequirmentsDistanceMap=new HashMap<>();
+		
+	
+		for(SchoolClass sclass:dna.getClasses())
+		{
+			allClassesCourseRequirmentsDistanceMap.put(sclass,new HashMap<>(sclass.getCoursHoursMap()));
+			
+		}
+		List<Leacture>allLeacture=dna.getLeactures();
+		for(Leacture leacture:allLeacture)
+		{
+			SchoolClass currentClass= leacture.getClassToTeach();
+			Map<Course,Integer>currentClassCourseRequirmentCounter=allClassesCourseRequirmentsDistanceMap.get(currentClass);
+			Course currentCourse=leacture.getCourse();
+			Integer hoursCounterOfCourse=currentClassCourseRequirmentCounter.get(currentCourse);
+			/*
+			 * 
+			 * two aproches one says i got atlist the lessons i want other says hell no its all or nothing
+			 * 
+			 */
+			if(hoursCounterOfCourse!=null)//course learned by class
+			{
+				
+				hoursCounterOfCourse--;
+				currentClassCourseRequirmentCounter.put(currentCourse, hoursCounterOfCourse);
+				
+			}
+		}
+		for(SchoolClass sclass :dna.getClasses())
+		{
+		    int coursesRequestByClass=sclass.getCoursHoursMap().size();	
+			final double courseRequirmentGradeWeight= (double)1/coursesRequestByClass;
+			Map<Course,Integer>distancesFromCoursesRequirment= allClassesCourseRequirmentsDistanceMap.get(sclass);
+			double classGrade=0;
+			for(Course course:sclass.getCoursHoursMap().keySet())
+			{
+				double distanceFromCourseRequirment=distancesFromCoursesRequirment.get(course);
+				distanceFromCourseRequirment=Math.abs(distanceFromCourseRequirment);
+				double gradeOfCurrentCourseRequirment = new SatisFactoryFunction().apply(distanceFromCourseRequirment);
+				gradeOfCurrentCourseRequirment*=courseRequirmentGradeWeight;
+				classGrade+=gradeOfCurrentCourseRequirment;
+			}
+			
+		
+			ruleGrade+= classGrade;
+			
+		}
+		ruleGrade/=maxRuleGrade;
+		
+		return new RuleResult(ruleGrade,getWeight());
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return "SatisFactory";
+	}
+	
+
+	
+	private static class SatisFactoryFunction extends HomoGraphicFunction
+	{
+
+		public SatisFactoryFunction() {
+			super(0, 1, 1, 1);
+			
+		}
+		
+	}
+	
+
+}

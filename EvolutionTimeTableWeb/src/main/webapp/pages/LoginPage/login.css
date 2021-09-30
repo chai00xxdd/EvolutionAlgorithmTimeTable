@@ -1,0 +1,18 @@
+body
+{
+ text-align: center;
+ background: url("loginPage2.jpeg") no-repeat center center fixed; 
+ background-color: cover;
+ 
+ 
+}
+
+#LoginDiv{
+   padding-top: 10%;
+   font-size: 40px;
+  
+   
+}
+
+
+

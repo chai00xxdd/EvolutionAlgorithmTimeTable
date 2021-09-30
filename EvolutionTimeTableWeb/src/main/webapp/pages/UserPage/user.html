@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+
+    <script src="../../common/app.js"></script>
+    <script src="../../common/utils.js"></script>
+    <script src="../../common/jquery-3.6.0.min.js"></script>
+
+
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css">
+    <link rel="stylesheet" href="user.css">
+
+    <link rel="stylesheet" href="../../chat/chat.css">
+    <link rel="stylesheet" href="../../common/app.css">
+    <link rel="stylesheet" href="../../common/bootstrap.css">
+
+
+
+
+</head>
+
+<body id="page-top" style="background-color:#e5e5e5">
+
+
+
+
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <div class="container px-4">
+            <a class="navbar-brand" href="#page-top" id="WelcomeTitle">Welcome Or</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+
+        </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <section>
+
+        <div class="container">
+            <h2>Online Users</h2>
+            <ul id="UsersList">
+            </ul>
+        </div>
+    </section>
+
+
+
+
+    <section id="timeProblemsSection" style="margin-top: 50px;">
+        <div class="container ">
+            <h2>Time Problems</h2>
+
+            <div id="timeProblemsDiv">
+                <table class="rtable" id="timeProblemsTable">
+                    <thead>
+                        <tr>
+                            <th>Browser</th>
+                            <th>Sessions</th>
+                            <th>Percentage </th>
+                            <th>New Users</th>
+                            <th>Avg. Duration</th>
+                            <th>Browser</th>
+                            <th>Sessions</th>
+                            <th>Percentage </th>
+                            <th>New Users</th>
+                            <th>Avg. Duration</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Chrome</td>
+                            <td>9,562</td>
+                            <td>68.81%</td>
+                            <td>7,895</td>
+                            <td>01:07</td>
+                            <td>Chrome</td>
+                            <td>9,562</td>
+                            <td>68.81%</td>
+                            <td>7,895</td>
+                            <td>01:07</td>
+                        </tr>
+                        <tr>
+                            <td>Firefox</td>
+                            <td>2,403</td>
+                            <td>17.29%</td>
+                            <td>2,046</td>
+                            <td>00:59</td>
+                            <td>Chrome</td>
+                            <td>9,562</td>
+                            <td>68.81%</td>
+                            <td>7,895</td>
+                            <td>01:07</td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+            </div>
+
+            <form id="uploadForm" action="/EvolutionTimeTableWeb/UploadTimeTableProblemServlet"
+                enctype="multipart/form-data" method="POST">
+
+                <input type="Submit" value="Upload File">
+                <input type="file" name="file1" id="fileInput">
+            </form>
+            <div id="timeProblemsUploadError"></div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+    <!--Chat Section-->
+    <section id="chatSection">
+
+        <button class="chat-btn chatButtons">
+            <i class="material-icons"> comment </i>
+        </button>
+
+        <div class="chat-popup ">
+
+            <div class="chat-area" id="chatarea">
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="chatInput">
+                <button class="submit chatButtons"> <i class="material-icons"> send</i></button>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+<script src="../../chat/chat.js"></script>
+<script src="timeProblemsTableClass.js"></script>
+<script src="user.js"></script>
+
+</html>

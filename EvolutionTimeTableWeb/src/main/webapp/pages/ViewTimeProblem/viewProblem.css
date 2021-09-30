@@ -1,0 +1,33 @@
+body
+{
+    margin:0;
+}
+
+#menuBar
+{
+	z-index:10000;
+	position:relative;
+}
+
+#contenetSection
+{
+	margin-bottom:50px;
+}
+
+.cancelScrollPane
+  {
+      overflow-x: unset;
+  }
+  
+  #bestSolutionDiv
+  {
+   
+   margin-bottom:200px;
+  }
+  
+  
+  #configContainer
+  {
+  min-height:700px;
+  }
+  

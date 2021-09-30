@@ -1,0 +1,1 @@
+window.location = "pages/LoginPage/login.html";
