@@ -66,12 +66,13 @@ public class TruncationSelection extends Selection implements Configurable {
 	@Override
 	public String getParemetersString() {
 		// TODO Auto-generated method stub
+		
 		 return "TopPercent = "+topPrecentOfPopulationToChoose + "";
 	}
 	@Override
 	public Parameter getParemter() {
 		// TODO Auto-generated method stub
-		return new Parameter("TopPercent",topPrecentOfPopulationToChoose);
+		return new Parameter("TopPercent",(int)topPrecentOfPopulationToChoose);
 	}
 	
 	

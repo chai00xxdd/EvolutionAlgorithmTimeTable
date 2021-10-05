@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pages.Errors.ErrorsPageController">
+   <children>
+      <HBox alignment="CENTER" layoutX="129.0" layoutY="31.0" AnchorPane.leftAnchor="129.0" AnchorPane.rightAnchor="128.0">
+         <children>
+            <Label fx:id="errorLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="errorLabel" underline="true">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <StackPane alignment="TOP_CENTER" layoutX="82.0" layoutY="87.0" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="82.0" AnchorPane.rightAnchor="81.0" AnchorPane.topAnchor="87.0">
+         <children>
+            <TableView fx:id="errorTable" maxHeight="800.0" maxWidth="900.0" minHeight="-Infinity" minWidth="-Infinity" StackPane.alignment="TOP_CENTER">
+              <columns>
+                <TableColumn fx:id="errorNumberColumn" editable="false" minWidth="129.0" prefWidth="129.0" sortable="false" text="Error Number" />
+                <TableColumn fx:id="errorDescriptionColumn" editable="false" minWidth="307.0" prefWidth="312.0" sortable="false" text="Error Description" />
+              </columns>
+            </TableView>
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

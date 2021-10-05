@@ -1,0 +1,9 @@
+
+.table-row-cell {
+    -fx-cell-size: 50px;
+}
+
+#usersTable .table-row-cell
+{
+	-fx-cell-size: 30px;
+}

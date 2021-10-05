@@ -10,7 +10,7 @@ public class StopConditionDTO {
 	private String name ;
 	private String value;
 	private boolean enabled ;
-	private double progress;
+	private double progress = 0;
 	private boolean reached = false;
 	
 	
@@ -22,6 +22,13 @@ public class StopConditionDTO {
 		this.value = stopConditionInterface.getValue();
 		this.enabled = stopConditionInterface.isEnabled();
 		this.reached = progress >=1 && enabled;
+	}
+	
+	public StopConditionDTO(String name,String parameter,boolean enabled)
+	{
+		this.name = name;
+		this.value = parameter;
+		this.enabled = enabled;
 	}
 
 	public String getName() {
@@ -43,6 +50,8 @@ public class StopConditionDTO {
 	public boolean isReached() {
 		return reached;
 	}
+	
+	
 	
 	
 

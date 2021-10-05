@@ -1,0 +1,64 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+
+
+
+.scroll-pane > .viewport  
+{ 
+	/* 
+	-fx-background-image: url("backgroundImage.jpg");
+	-fx-background-size:stretch ;  */
+}
+#MainContent
+{
+	
+}
+#button1
+{
+	-fx-background-color: #afeeee;
+	-fx-font-size:15px;
+}   
+
+
+
+#button1:hover
+{
+	-fx-font-size:20px;
+	-fx-cursor: hand;
+}
+
+
+
+.MainMenuButton:hover
+{
+	-fx-cursor: hand;
+}
+
+
+
+.table-view
+{
+	-fx-font-size: 15px;
+}
+
+.tab
+{
+	-fx-font-size:15px;
+}
+
+
+#TopTitle
+{
+	-fx-background-image: url("banner.png");
+	-fx-background-size:stretch ;  
+}
+
+
+
+
+
+
+
+
+
+
+

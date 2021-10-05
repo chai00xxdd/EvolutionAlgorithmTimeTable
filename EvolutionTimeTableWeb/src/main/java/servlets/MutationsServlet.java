@@ -35,7 +35,7 @@ public class MutationsServlet extends HttpServlet {
 			return;
 		}
 		
-		 ServerManager serverManager = ServerUtils.getServerManager(getServletContext());
+		    ServerManager serverManager = ServerUtils.getServerManager(getServletContext());
 			String userName = ServerUtils.getUserName(request);
 			String problemId = ServerUtils.getProblemId(request);
 			//System.out.println(problemId);
@@ -46,7 +46,7 @@ public class MutationsServlet extends HttpServlet {
 			String operation = request.getParameter(Attributes.Operation);
 			String component = request.getParameter(Attributes.Component);
 			EvolutionAlgorithmEngine engineOfUserOfProblem = serverManager.getOrDefaultEngine(userName, problemId);
-			
+		
 			if(operation !=null && operation.toUpperCase().equals("DELETE"))
 			{
 				engineOfUserOfProblem.getAlgorithmConfiguration().removeMutationById(MutationId);

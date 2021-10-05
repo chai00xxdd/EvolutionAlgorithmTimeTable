@@ -1,5 +1,6 @@
 package evolution.algorithm;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import DTO.StopConditionDTO;
@@ -13,7 +14,19 @@ public class AlgorithmProgress {
 	private boolean stopConditionReached = false;
 	private boolean noStopConditions = false;
 	private List<StopConditionDTO> stopConditionsProgress;
+	private String username = "";
 	
+	public AlgorithmProgress(AlgorithmProgress other)
+	{
+	   fitness = other.fitness;
+	   generation = other.generation;
+	   timePassed = other.timePassed;
+	   algorithmState = other.algorithmState;
+	   stopConditionReached = other.stopConditionReached;
+	   noStopConditions = other.noStopConditions;
+	   stopConditionsProgress = new ArrayList<>(other.stopConditionsProgress);
+	   username = other.username;
+	}
 	
 	public AlgorithmProgress(double fitness, int generation, int timePassed, AlgorithmState algorithmState,List<StopConditionDTO> stopCondProgress) {
 		super();
@@ -53,6 +66,30 @@ public class AlgorithmProgress {
 	public void setTimePassed(int timePassed) {
 		this.timePassed = timePassed;
 	}
+
+	public boolean isStopConditionReached() {
+		return stopConditionReached;
+	}
+
+	public boolean isNoStopConditions() {
+		return noStopConditions;
+	}
+
+	public List<StopConditionDTO> getStopConditionsProgress() {
+		return stopConditionsProgress;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	
+	
+	
+	
 	
 	
 	

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="562.0" prefWidth="875.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pages.Classes.ClassesPageController">
+   <children>
+      <Label alignment="TOP_LEFT" layoutX="277.0" text="Classes Page" underline="true">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <TableView fx:id="classesTable" layoutX="62.0" layoutY="76.0" maxHeight="321.0" maxWidth="800.0" prefHeight="321.0" prefWidth="771.0">
+         <columns>
+            <TableColumn fx:id="classIdColumn" editable="false" minWidth="47.0" prefWidth="47.0" text="id" />
+            <TableColumn fx:id="classNameColumn" editable="false" minWidth="15.0" prefWidth="132.0" text="name" />
+            <TableColumn fx:id="requirmentsColumn" prefWidth="591.0" text="Requirments" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
