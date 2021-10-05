@@ -193,7 +193,7 @@ public class AlgorithmOperationController implements Initializable {
 		
 	//	initStopConditionsProgressBar();
 		//ProgressBar
-		timeProgressBar.progressProperty().bind(Bindings.divide(algorithmPropertyManager.algorithmRunTimeInMsProperty(),algorithmPropertyManager.timeLimitInMsProperty()));
+		timeProgressBar.progressProperty().bind(Bindings.divide(algorithmPropertyManager.algorithmRunTimeInMsProperty(),algorithmPropertyManager.timeLimitInMsProperty().multiply(1000)));
     	fitnessProgressBar.progressProperty().bind(Bindings.divide(algorithmPropertyManager.bestFitnessProperty(),algorithmPropertyManager.fitnessLimitProperty()));
     	generationsProgressBar.progressProperty().bind(Bindings.divide(algorithmPropertyManager.generationsProperty(),algorithmPropertyManager.generationsLimitProperty()));
 

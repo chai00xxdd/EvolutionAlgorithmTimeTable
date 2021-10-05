@@ -74,7 +74,7 @@
                               <Font size="16.0" />
                            </font>
                         </TextArea>
-                        <TextField fx:id="chatTextBox" layoutX="11.0" layoutY="145.0" onAction="#chatTextBoxOnAction" promptText="CHAT" AnchorPane.bottomAnchor="0.0" />
+                        <TextField fx:id="chatTextBox" layoutX="11.0" layoutY="145.0" onAction="#chatTextBoxOnAction" prefHeight="25.0" prefWidth="238.0" promptText="CHAT" AnchorPane.bottomAnchor="0.0" />
                      </children>
                   </AnchorPane>
                </children>
