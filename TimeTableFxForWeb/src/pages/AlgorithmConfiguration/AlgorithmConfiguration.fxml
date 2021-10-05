@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="pageAnchorPane" maxHeight="1300.0" maxWidth="900.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1250.0" prefWidth="752.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pages.AlgorithmConfiguration.AlgorithmConfigurationController">
+   <children>
+      <HBox alignment="CENTER" layoutX="316.0" layoutY="21.0" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="284.0">
+         <children>
+            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Algorithm Configuration">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label layoutX="60.0" layoutY="55.0" text="Population">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TextField fx:id="populationTextBox" layoutX="61.0" layoutY="109.0" promptText="population size" />
+      <Button fx:id="populationUpdateButton" layoutX="230.0" layoutY="109.0" mnemonicParsing="false" onAction="#populationUpdateButtonOnAction" prefHeight="25.0" prefWidth="75.0" text="Update" />
+      <Line endX="627.0" layoutX="112.0" layoutY="179.0" startX="-100.0" />
+      <Label layoutX="60.0" layoutY="179.0" text="Selection">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="selectionComboBox" layoutX="60.0" layoutY="227.0" prefWidth="150.0" />
+      <TextField fx:id="ellitismTextBox" layoutX="230.0" layoutY="227.0" promptText="Ellitism" />
+      <HBox layoutX="60.0" layoutY="264.0" spacing="15.0">
+         <children>
+            <VBox>
+               <children>
+                  <TextField fx:id="selectionParameterTextBox" promptText="TopPercent" />
+               </children>
+            </VBox>
+            <Button fx:id="selectUpdateButton" mnemonicParsing="false" onAction="#selectUpdateButtonOnAction" prefHeight="25.0" prefWidth="75.0" text="Update" />
+         </children>
+      </HBox>
+      <Line endX="627.0" layoutX="115.0" layoutY="334.0" startX="-100.0" />
+      <Label layoutX="54.0" layoutY="344.0" text="CrossOver">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="selectionErrorLabel" layoutX="60.0" layoutY="298.0" text="SelectionErrorLabel">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label fx:id="populationErrorLabel" layoutX="60.0" layoutY="142.0" text="populationErrorLabel">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="crossoverComboBox" layoutX="60.0" layoutY="391.0" prefWidth="150.0" />
+      <TextField fx:id="cuttingPointsTextBox" layoutX="231.0" layoutY="391.0" promptText="Cutting Points" />
+      <HBox layoutX="60.0" layoutY="426.0" spacing="20.0">
+         <children>
+            <ComboBox fx:id="aspectComboBox" prefWidth="150.0" />
+            <Button fx:id="crossoverUpdateButton" mnemonicParsing="false" onAction="#crossoverUpdateButtonOnAction" prefHeight="25.0" prefWidth="75.0" text="Update" />
+         </children>
+      </HBox>
+      <Label fx:id="crossoverErrorLabel" layoutX="60.0" layoutY="461.0" text="CrossOverErrorLabel">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Line endX="627.0" layoutX="112.0" layoutY="499.0" startX="-100.0" stroke="#70608d" />
+      <Label layoutX="47.0" layoutY="508.0" text="Mutations">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TableView fx:id="mutationsTable" layoutX="41.0" layoutY="547.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="672.0">
+        <columns>
+          <TableColumn fx:id="mutationNameColumn" prefWidth="121.0" text="Mutation Name" />
+          <TableColumn fx:id="mutationProbalityColumn" prefWidth="103.0" text="Probality" />
+            <TableColumn fx:id="mutationsParamsColumn" prefWidth="297.0" text="Parameters" />
+            <TableColumn fx:id="mutationDeleteColumn" prefWidth="148.0" text="Delete" />
+        </columns>
+      </TableView>
+      <ComboBox fx:id="mutationComboBox" layoutX="40.0" layoutY="779.0" prefWidth="150.0" />
+      <TextField fx:id="mutationProbalityTextBox" layoutX="210.0" layoutY="779.0" promptText="Probality" />
+      <HBox layoutX="41.0" layoutY="820.0" spacing="20.0">
+         <children>
+            <ComboBox fx:id="mutationFlippingComponentComboBox" prefHeight="25.0" prefWidth="109.0" promptText="Component" />
+            <TextField fx:id="mutationParameterTextBox" promptText="Max Tupples" />
+         </children>
+      </HBox>
+      <Button fx:id="addMutationButton" layoutX="40.0" layoutY="852.0" mnemonicParsing="false" onAction="#addMutationButtonOnAction" text="Add Mutation" />
+      <Label fx:id="mutationsErrorLabel" layoutX="147.0" layoutY="845.0" text="mutationsErrorLabel">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Line endX="627.0" layoutX="113.0" layoutY="891.0" startX="-100.0" stroke="#70608d" />
+      <Label layoutX="47.0" layoutY="904.0" text="Stop Conditions">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <TableView fx:id="stopConditionTable" layoutX="54.0" layoutY="953.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="672.0">
+        <columns>
+          <TableColumn fx:id="stopCondNameColumn" prefWidth="209.0" text="Stop Condition" />
+          <TableColumn fx:id="stopCondValueColumn" prefWidth="216.0" text="Value" />
+            <TableColumn fx:id="stopCondEnabledColumn" prefWidth="146.0" text="Enabled" />
+        </columns>
+      </TableView>
+      <Label fx:id="stopCondErrorLabel" layoutX="60.0" layoutY="1169.0" text="stopConditionErrorLabel">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <Label layoutX="237.0" layoutY="364.0" text="Cutting Points" />
+      <Label layoutX="231.0" layoutY="199.0" text="Ellitsm" />
+      <Label layoutX="244.0" layoutY="755.0" text="Probality" />
+   </children>
+</AnchorPane>

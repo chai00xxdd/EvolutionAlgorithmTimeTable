@@ -45,6 +45,23 @@ public class TeacherDTO {
 	public List<SubjectDTO> getCourses() {
 		return courses;
 	}
+
+	public int getWorkingHoursPrefernce() {
+		return workingHoursPrefernce;
+	}
+
+	public String getCoursesString() {
+		return coursesString;
+	}
+
+	@Override
+	public String toString() {
+		return "Teacher "+getId();
+	}
+	
+	
+	
+	
 	
 	
 

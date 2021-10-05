@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="774.0" prefWidth="1029.0" stylesheets="@timeProblems.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pages.TimeProblems.TimeProblemsPageController">
+   <children>
+      <AnchorPane layoutX="22.0" layoutY="294.0">
+         <children>
+            <Label text="TimeProblems" underline="true">
+               <font>
+                  <Font size="25.0" />
+               </font>
+            </Label>
+            <TableView fx:id="timeProblemsTable" layoutY="53.0" prefHeight="335.0" prefWidth="824.0">
+              <columns>
+                <TableColumn fx:id="solvingColumn" editable="false" prefWidth="68.0" sortable="false" text="Solving" />
+                <TableColumn fx:id="daysColumn" editable="false" prefWidth="44.0" sortable="false" text="D" />
+                  <TableColumn fx:id="hoursColumn" editable="false" prefWidth="35.0" sortable="false" text="H" />
+                  <TableColumn fx:id="teachersColumn" editable="false" prefWidth="35.0" sortable="false" text="T" />
+                  <TableColumn fx:id="classColumn" editable="false" prefWidth="35.0" sortable="false" text="C" />
+                  <TableColumn fx:id="hardRulesColumn" editable="false" prefWidth="91.0" sortable="false" text="Hard Rules" />
+                  <TableColumn fx:id="softRulesColumn" editable="false" prefWidth="122.0" sortable="false" text="Soft Rules" />
+                  <TableColumn fx:id="ownerColumn" editable="false" prefWidth="150.0" sortable="false" text="Owner" />
+                  <TableColumn fx:id="bestFitnessColumn" editable="false" prefWidth="114.0" sortable="false" text="Best Fitness" />
+                  <TableColumn fx:id="statusColumn" editable="false" prefWidth="128.0" sortable="false" text="Status" />
+              </columns>
+            </TableView>
+            <TableView fx:id="loadProblemsTable" layoutX="824.0" layoutY="53.0" prefHeight="335.0" prefWidth="145.0">
+              <columns>
+                <TableColumn fx:id="loadColumn" editable="false" prefWidth="143.0" sortable="false" text="Load" />
+              </columns>
+            </TableView>
+            <Label fx:id="timeProblemErrorLabel" layoutX="275.0" layoutY="398.0" text="timeProblemErrorLabel">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Label layoutX="22.0" layoutY="14.0" text="Connected Users" underline="true">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <TableView id="usersTable" fx:id="usersTable" layoutX="22.0" layoutY="60.0" prefHeight="224.0" prefWidth="200.0">
+        <columns>
+          <TableColumn fx:id="usernameColumn" prefWidth="75.0" text="Username" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>

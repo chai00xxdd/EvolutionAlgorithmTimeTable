@@ -45,6 +45,19 @@ public class ClassDTO {
 	public List<CourseRequirment> getSubjectsRequirments() {
 		return subjectsRequirments;
 	}
+
+	public String getRequirmentsString() {
+		return requirmentsString;
+	}
+
+	@Override
+	public String toString() {
+		return "Class "+getId();
+	}
+	
+	
+	
+	
 	
 	
 	

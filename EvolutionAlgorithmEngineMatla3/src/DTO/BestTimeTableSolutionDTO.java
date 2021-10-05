@@ -23,6 +23,7 @@ public class BestTimeTableSolutionDTO {
 	private List<ShecduleDTO> classesShecdule = new ArrayList<>();
 	private String userName;
 	
+	
 	public BestTimeTableSolutionDTO(BestTimeTableSolutionDetails solutionDetails)
 	{
 		fitness = solutionDetails.getSolution().getFitness();
@@ -50,14 +51,58 @@ public class BestTimeTableSolutionDTO {
 		
 		
 	}
+   
+	
+	
+
 
 	public void setUserName(String username) {
 		this.userName = username;
+	}
+
+	public double getFitness() {
+		return fitness;
+	}
+
+	public int getGeneration() {
+		return generation;
+	}
+
+	public int getNumberOfLeactuers() {
+		return numberOfLeactuers;
+	}
+
+	public List<RawLeacture> getRawLeactuers() {
+		return rawLeactuers;
+	}
+
+	public List<TeacherDTO> getTeachers() {
+		return teachers;
+	}
+
+	public List<ClassDTO> getClasses() {
+		return classes;
+	}
+
+	public List<RuleResult> getRuleResults() {
+		return ruleResults;
+	}
+
+	public List<ShecduleDTO> getTeachersShecdule() {
+		return teachersShecdule;
+	}
+
+	public List<ShecduleDTO> getClassesShecdule() {
+		return classesShecdule;
+	}
+
+	public String getUserName() {
+		return userName;
 	}
 	
 	
 	
 	
-	
+
 
 }

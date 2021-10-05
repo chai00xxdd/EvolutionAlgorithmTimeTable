@@ -25,6 +25,13 @@ public class MutationDTO {
 		
 		id = mutation.getId();
 	}
+	
+	public MutationDTO(String name,double probality,String parameterString)
+	{
+		this.name = name;
+		this.probality = probality;
+		this.parameterString = parameterString;
+	}
 
 	public String getName() {
 		return name;
@@ -41,6 +48,12 @@ public class MutationDTO {
 	public int getId() {
 		return id;
 	}
+
+	public String getParameterString() {
+		return parameterString;
+	}
+	
+	
 	
 	
 

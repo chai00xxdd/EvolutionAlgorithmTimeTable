@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXProgressBar?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pages.AlgorithmOperation.AlgorithmOperationController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="662.0" prefWidth="813.0">
+         <children>
+            <AnchorPane layoutX="195.0" layoutY="69.0">
+               <children>
+                  <JFXButton id="button1" fx:id="ResumeButton" buttonType="RAISED" layoutX="145.0" layoutY="11.0" onAction="#ResumeButtonOnAction" prefHeight="99.0" prefWidth="120.0" styleClass="algorithmButton" stylesheets="@../../application/application.css" text="Reusme" textFill="#260000" wrapText="true">
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#26c952" />
+                              <Stop color="#28ab30" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <JFXButton id="button1" fx:id="StopButton" buttonType="RAISED" layoutX="276.0" layoutY="11.0" onAction="#StopButtonOnAction" prefHeight="99.0" prefWidth="120.0" styleClass="algorithmButton" stylesheets="@../../application/application.css" text="Stop" textFill="#260000" wrapText="true">
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="0.06190476190476191" startX="1.0">
+                           <stops>
+                              <Stop color="#26c952" />
+                              <Stop color="#f51c27" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
+                  </JFXButton>
+                  <JFXProgressBar fx:id="algorithmRunningProgressBar" layoutY="158.0" prefHeight="0.0" prefWidth="364.0" />
+                  <Label fx:id="algorithmStatusLabel" layoutX="110.0" layoutY="120.0" text="algorithm running">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="chooseConditionsLabel" layoutX="62.0" layoutY="120.0" text="please choose stop conditions">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <JFXButton id="button1" fx:id="RunButton" buttonType="RAISED" layoutX="14.0" layoutY="11.0" onAction="#RunButtonOnAction" prefHeight="99.0" prefWidth="120.0" styleClass="algorithmButton" stylesheets="@../../application/application.css" text="Run" textFill="#260000" wrapText="true">
+                     <ripplerFill>
+                        <LinearGradient endX="1.0" endY="1.0">
+                           <stops>
+                              <Stop color="#26c952" />
+                              <Stop color="#28ab30" offset="1.0" />
+                           </stops>
+                        </LinearGradient>
+                     </ripplerFill>
+                  </JFXButton>
+               </children>
+            </AnchorPane>
+            <HBox fx:id="resultsHbox" layoutX="218.0" layoutY="247.0" spacing="10.0">
+               <children>
+                  <Label fx:id="GenerationsPassedLabel" alignment="CENTER" prefHeight="129.0" prefWidth="144.0" style="-fx-background-color: #00ffff;" text="Generation Passed:0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="9.14" radius="4.07" width="9.14" />
+                     </effect>
+                  </Label>
+                  <Label fx:id="BestFitnessLabel" alignment="CENTER" prefHeight="129.0" prefWidth="144.0" style="-fx-background-color: #00ffff;" text="Best Fitness: 0">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="9.14" radius="4.07" width="9.14" />
+                     </effect>
+                  </Label>
+                  <Label fx:id="runningTimeLabel" alignment="CENTER" prefHeight="129.0" prefWidth="144.0" style="-fx-background-color: #00ffff;" text="Running Time :">
+                     <font>
+                        <Font size="13.0" />
+                     </font>
+                     <effect>
+                        <DropShadow height="9.14" radius="4.07" width="9.14" />
+                     </effect>
+                  </Label>
+               </children>
+            </HBox>
+            <VBox layoutX="18.0" layoutY="242.0" spacing="12.0">
+               <children>
+                  <AnchorPane fx:id="generationConditionPane" prefHeight="40.0" prefWidth="189.0">
+                     <children>
+                        <Label layoutY="8.0" text="Generation Stop Condition:" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ProgressIndicator fx:id="generationsProgressBar" layoutX="164.0" progress="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="fitnessConditionAnchor" prefHeight="40.0" prefWidth="189.0">
+                     <children>
+                        <Label layoutY="8.0" text="Fitness Stop Codition" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ProgressIndicator fx:id="fitnessProgressBar" layoutX="164.0" progress="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="TimerConditionAnchor" prefHeight="40.0" prefWidth="189.0">
+                     <children>
+                        <Label layoutY="8.0" text="Timer Stop Condition" AnchorPane.leftAnchor="0.0">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <ProgressIndicator fx:id="timeProgressBar" layoutX="164.0" progress="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+               <padding>
+                  <Insets top="2.0" />
+               </padding>
+            </VBox>
+            <TableView fx:id="usersProgressTable" layoutX="14.0" layoutY="400.0" prefHeight="236.0" prefWidth="465.0">
+              <columns>
+                <TableColumn fx:id="usernameColumn" editable="false" prefWidth="130.0" sortable="false" text="Username" />
+                <TableColumn fx:id="generationColumn" editable="false" prefWidth="120.0" sortable="false" text="Generation" />
+                  <TableColumn fx:id="bestFitnessColumn" editable="false" prefWidth="187.0" sortable="false" text="Best Fitness" />
+              </columns>
+            </TableView>
+            <TableView fx:id="algorithmViewTable" layoutX="479.0" layoutY="400.0" prefHeight="236.0" prefWidth="311.0">
+              <columns>
+                <TableColumn fx:id="bestSolutionButtonColumn" editable="false" prefWidth="148.0" sortable="false" text="Best Solution" />
+                <TableColumn fx:id="configButtonColumn" editable="false" prefWidth="135.0" sortable="false" text="Config" />
+              </columns>
+            </TableView>
+         </children>
+         <stylesheets>
+            <URL value="@../../application/application.css" />
+            <URL value="@algorithmOperation.css" />
+         </stylesheets>
+      </AnchorPane>
+      <LineChart fx:id="BestfitnessChart" animated="false" maxHeight="1.7976931348623157E308" maxWidth="1000.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="319.0" prefWidth="635.0">
+         <xAxis>
+            <NumberAxis fx:id="generationAxis" label="GENERATION" prefWidth="240.0" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="FitnessAxis" label="FITNESS" side="LEFT" upperBound="1.0" />
+         </yAxis>
+      </LineChart>
+   </children>
+</VBox>

@@ -48,4 +48,37 @@ public class ShecduleDTO {
 		return emptyShecdule;
 	}
 
+
+	@Override
+	public String toString() {
+		return name; 
+	}
+
+
+	public String getName() {
+		return name;
+	}
+
+
+	public String getId() {
+		return id;
+	}
+
+
+	public int getDays() {
+		return days;
+	}
+
+
+	public int getHours() {
+		return hours;
+	}
+
+
+	public List<LeactureDTO>[][] getLeactures() {
+		return leactures;
+	}
+	
+	
+
 }

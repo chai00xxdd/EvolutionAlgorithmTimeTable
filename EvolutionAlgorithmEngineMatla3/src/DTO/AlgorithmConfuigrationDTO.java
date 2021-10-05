@@ -30,6 +30,48 @@ public class AlgorithmConfuigrationDTO {
 		
 
 	}
+	
+	
+
+
+
+	public int getPopulationSize() {
+		return populationSize;
+	}
+
+
+
+
+
+	public SelectionDTO getSelection() {
+		return selection;
+	}
+
+
+
+
+
+	public CrossOverDTO getCrossover() {
+		return crossover;
+	}
+
+
+
+
+
+	public List<MutationDTO> getMutations() {
+		return mutations;
+	}
+
+
+
+
+
+	public List<StopConditionDTO> getStopConditions() {
+		return stopConditions;
+	}
+
+
 
 
 

@@ -48,15 +48,23 @@ public class ChatServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//System.out.println("at chat post");
+		try
+		{
 		if(!ServerUtils.isLoggedIn(request))
 		{
-			return;
+			ServerUtils.sendError(response, "not logged in!!!");
 		}
 		
 		ServerManager serverManager = ServerUtils.getServerManager(getServletContext());
 		String userName =ServerUtils.getUserName(request);
 		String message = request.getParameter(Attributes.Message);
 		serverManager.addChatRecord(new ChatRecord(userName,message));
+		}
+		catch(Exception e)
+		{
+			System.out.println("in server");
+			e.printStackTrace();
+		}
 	}
 
 }

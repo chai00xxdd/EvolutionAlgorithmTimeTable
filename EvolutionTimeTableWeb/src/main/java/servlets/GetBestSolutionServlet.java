@@ -35,9 +35,12 @@ public class GetBestSolutionServlet extends HttpServlet {
 			return;
 		}
 		
+		System.out.println("In GetBestSolutionServlet");
 		ServerManager serverManager = ServerUtils.getServerManager(getServletContext());
 		String userNameToViewHisBestSolution = request.getParameter(Attributes.Username);
 		String problemIdToView = request.getParameter(Attributes.Id);
+		System.out.println("username = "+userNameToViewHisBestSolution);
+		System.out.println("problem id "+problemIdToView);
 		BestTimeTableSolutionDTO bestSolutionDTO = serverManager.pullBestSolutionDTO(userNameToViewHisBestSolution,problemIdToView);
 		if(bestSolutionDTO != null)
 		{
