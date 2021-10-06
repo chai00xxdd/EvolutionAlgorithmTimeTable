@@ -167,7 +167,7 @@ public class MainController implements Initializable {
     //CHAT
     
     @FXML
-    private AnchorPane chatPanel;
+    private VBox chatPanel;
     @FXML
     private TextArea chatTextArea;
 
