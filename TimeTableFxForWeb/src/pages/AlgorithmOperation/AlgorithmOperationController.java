@@ -255,7 +255,7 @@ public class AlgorithmOperationController implements Initializable {
 		//isThereAnyStopCond.addListener((obser)->{StopButton.fire();});
 		   
 		RunButton.disableProperty().bind(Bindings.or(algorithmRunning,isThereAnyStopCond.not()));
-		ResumeButton.disableProperty().bind(runOrReachedStopCondOrStopCondNotExists);
+		ResumeButton.disableProperty().bind(Bindings.or(algorithmPropertyManager.IsAlgorithmRunnedAtlistOnceProperty().not(), runOrReachedStopCondOrStopCondNotExists));
 		StopButton.disableProperty().bind(isThereAnyStopCond.not());
 		
 		isThereAnyStopCond.addListener((obser,oldval,newval)->{

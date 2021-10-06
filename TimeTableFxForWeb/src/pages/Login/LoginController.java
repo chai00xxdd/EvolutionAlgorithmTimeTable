@@ -13,6 +13,8 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 import pages.Main.MainController;
 
 public class LoginController implements Initializable {
@@ -27,6 +29,41 @@ public class LoginController implements Initializable {
     private JFXButton loginButton;
     
     private MainController mainController;
+    
+    private Media musicMedia = null;
+    private MediaPlayer musicPlayer = null;
+    
+    public void setLoginMusic(Media musicMedia)
+    {
+    	this.musicMedia = musicMedia;
+    }
+    
+    public void playMusic()
+    {
+    	
+    	if(musicPlayer != null)
+    	{
+    		musicPlayer.stop();
+    	}
+    	if(musicMedia != null)
+    	{
+    	musicPlayer = new MediaPlayer(musicMedia);
+    	musicPlayer.play();
+    	}
+    }
+    
+    public void stopMusic()
+    {
+    	if(musicPlayer != null)
+    	{
+    		musicPlayer.stop();
+    	}
+    }
+    
+    public void prepare()
+    {
+    	//play music if not null and so on
+    }
     
     public void setMainController(MainController mainController)
     {
@@ -65,6 +102,9 @@ public class LoginController implements Initializable {
 		usernameTextField.setOnAction((action)->{
 			loginButton.fire();
 		});
+	
+		
+	     
 	}
 
 }

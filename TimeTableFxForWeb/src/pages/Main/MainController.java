@@ -65,6 +65,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.media.Media;
 import javafx.scene.text.Font;
 import javafx.stage.FileChooser;
 import page.Teachers.TeachersPageController;
@@ -157,6 +158,11 @@ public class MainController implements Initializable {
     
     private HttpClientETT client = new HttpClientETT();
     private AtomicString currentProblemLoadedId = new AtomicString("");
+    
+    //Music
+    
+    Media loginMusic = null ;
+    
     @FXML
     private JFXButton timeProblemsButton;
     
@@ -183,7 +189,11 @@ public class MainController implements Initializable {
     }
     
     public HttpClientETT getClient() {
+    	
+    
 		return client;
+		
+		
 	}
 
     @FXML
@@ -213,10 +223,12 @@ public class MainController implements Initializable {
     }
     private void disconnectedFromServerAction()
     {
+    	
     	setLogin(false);
     	setIsProblemLoaded(false);
     	pageTitle.setText("No Connection To Server");
     	setIsServerUp(false);
+    	currentProblemLoadedId.setString("");
     	if(getContent() != pagesMap.get(PageName.LoginPage))
     	{
     		
@@ -613,8 +625,20 @@ public class MainController implements Initializable {
 		
 		try
 		{
+			
+			//loginMusic = new Media(LoginController.class.getResource("loginmusic.mp3").toURI().toString());
+		}
+		catch(Exception e)
+		{
+			
+		}
+		
+		try
+		{
 		setTitle("");
 		loadPages();
+		//loginPageController.setLoginMusic(loginMusic);
+		//loginPageController.playMusic();
 		setContent(pagesMap.get(PageName.LoginPage));
 		}
 		catch(Exception e)
@@ -709,6 +733,8 @@ public class MainController implements Initializable {
 		});
 		chatThread.setDaemon(true);
 		chatThread.start();
+		
+		
 		//chatTextBox.visibleProperty().bind(isLogined);
 	//	bestSolutionPageController.bindToAlgorithmRunning(algorithmOperationController.IsAlgorithmRunningProperty());
 	//	algorithmConfigButton.disableProperty().bind(Bindings.or(isFxmlLoaded.not(), algorithmOperationController.IsAlgorithmRunningProperty()));

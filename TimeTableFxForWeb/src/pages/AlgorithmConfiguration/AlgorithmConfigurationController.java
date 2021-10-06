@@ -37,7 +37,9 @@ import pages.Main.MainController;
 
 public class AlgorithmConfigurationController implements Initializable {
 
-	
+	private static String DEFAULT_PAGE_TITLE = "Algorithm Configuration";
+	@FXML
+    private Label pageTitle;
 	@FXML
 	private Button selectUpdateButton;
     @FXML
@@ -134,6 +136,11 @@ public class AlgorithmConfigurationController implements Initializable {
     {
     	this.mainController = mainController;
     	this.client = mainController.getClient();
+    }
+    
+    private void setTitle(String title)
+    {
+    	pageTitle.setText(title);
     }
 
     @FXML
@@ -367,6 +374,7 @@ public class AlgorithmConfigurationController implements Initializable {
 		populateSelection(config.getSelection());
 		populateStopConditions(config.getStopConditions());
 		populateMutations(config.getMutations());
+		setTitle(DEFAULT_PAGE_TITLE);
 	}
 	private void populateMutations(List<MutationDTO> mutations) {
 	
@@ -498,6 +506,7 @@ public class AlgorithmConfigurationController implements Initializable {
 		clearErrors();
 		populateConfiguration(config);
 		disable();
+		setTitle(DEFAULT_PAGE_TITLE +" of user "+config.getUserName());
 	}
 	{
 		
