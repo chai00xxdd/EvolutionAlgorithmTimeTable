@@ -5,8 +5,9 @@
 .scroll-pane > .viewport  
 { 
 	/* 
-	-fx-background-image: url("backgroundImage.jpg");
-	-fx-background-size:stretch ;  */
+	
+	-fx-background-image: url("background.jpg");
+	-fx-background-size:stretch ;   */
 }
 #MainContent
 {
