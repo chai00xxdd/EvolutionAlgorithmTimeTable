@@ -16,7 +16,7 @@
    <children>
       <HBox alignment="CENTER" layoutX="316.0" layoutY="21.0" maxWidth="1.7976931348623157E308" AnchorPane.leftAnchor="316.0" AnchorPane.rightAnchor="284.0">
          <children>
-            <Label maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Algorithm Configuration">
+            <Label fx:id="pageTitle" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" text="Algorithm Configuration">
                <font>
                   <Font size="23.0" />
                </font>

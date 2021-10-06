@@ -130,6 +130,8 @@ public class TimeProblemsPageController implements Initializable {
     			   mainController.updateCurrentTimeProblemId(problem.getId()+"");
     			   timeProblemErrorLabel.setText("problem #"+problem.getId()+" loaded");
     			   System.out.println("loaded problem with id = "+problem.getId());
+    			   loadButton.setDisable(true);
+    			   
     			   
     		   });
     		   
@@ -137,6 +139,17 @@ public class TimeProblemsPageController implements Initializable {
     		});
     		
     		loadProblemsTable.setItems(ObservableUtils.CollectionToObseravbleList(loadButtons));
+    		
+    	}
+    	
+    	String loadedProblemId = mainController.getCurrentProblemLoadedId().getString();
+    	for(int i = 0 ; i < timeProblems.size(); i++)
+    	{
+    		String problemId = timeProblemsTable.getItems().get(i).getId()+"";
+    		boolean disableCurrnetProblemLoadButton = problemId.equals(loadedProblemId);
+  
+    		loadProblemsTable.getItems().get(i).getButton().setDisable(disableCurrnetProblemLoadButton);
+    		
     		
     	}
     	
