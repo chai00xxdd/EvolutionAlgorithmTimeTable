@@ -17,7 +17,7 @@
          <columns>
             <TableColumn fx:id="classIdColumn" editable="false" minWidth="47.0" prefWidth="47.0" text="id" />
             <TableColumn fx:id="classNameColumn" editable="false" minWidth="15.0" prefWidth="132.0" text="name" />
-            <TableColumn fx:id="requirmentsColumn" prefWidth="591.0" text="Requirments" />
+            <TableColumn fx:id="requirmentsColumn" prefWidth="580.0" text="Requirments" />
          </columns>
       </TableView>
    </children>

@@ -30,7 +30,7 @@
                       <TableColumn fx:id="teacherIdColumn" editable="false" prefWidth="66.0" text="id" />
                       <TableColumn fx:id="teacherNameColumn" editable="false" prefWidth="166.0" text="name" />
                         <TableColumn fx:id="courseColumn" prefWidth="329.0" text="Courses" />
-                        <TableColumn fx:id="workingPrefernceColumn" prefWidth="139.0" text="hours Prefernce" />
+                        <TableColumn fx:id="workingPrefernceColumn" prefWidth="133.0" text="hours Prefernce" />
                     </columns>
                      <VBox.margin>
                         <Insets left="50.0" right="50.0" />
