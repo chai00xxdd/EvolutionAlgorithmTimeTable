@@ -152,6 +152,9 @@ public class MainController implements Initializable {
     @FXML
     private JFXCheckBox animationsCheckBox;
     
+    @FXML
+    private JFXHamburger showChatButton;
+    
     private BooleanProperty isProblemLoaded = new SimpleBooleanProperty(false);
     private BooleanProperty isLogined = new SimpleBooleanProperty(false);
     private BooleanProperty isServerUp = new SimpleBooleanProperty(false);

@@ -42,6 +42,9 @@ public class TimeProblemsPageController implements Initializable {
 
     @FXML
     private TableColumn<TimeProblemShortDTO, String> classColumn;
+    
+    @FXML
+    private TableColumn<TimeProblemShortDTO, String> subjectColumn;
 
     @FXML
     private TableColumn<TimeProblemShortDTO, String> hardRulesColumn;
@@ -192,6 +195,7 @@ public class TimeProblemsPageController implements Initializable {
 		hoursColumn.setCellValueFactory(new PropertyValueFactory<>("hours"));
 		teachersColumn.setCellValueFactory(new PropertyValueFactory<>("teachers"));
 		classColumn.setCellValueFactory(new PropertyValueFactory<>("classes"));
+		subjectColumn.setCellValueFactory(new PropertyValueFactory<>("subjects"));
 		hardRulesColumn.setCellValueFactory(new PropertyValueFactory<>("hardRules"));
 		softRulesColumn.setCellValueFactory(new PropertyValueFactory<>("softRules"));
 		ownerColumn.setCellValueFactory(new PropertyValueFactory<>("owner"));

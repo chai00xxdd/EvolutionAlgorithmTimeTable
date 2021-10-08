@@ -28,6 +28,12 @@
 	-fx-cursor: hand;
 }
 
+#handOnOver:hover
+{
+	-fx-cursor: hand;
+}
+
+
 
 
 .MainMenuButton:hover

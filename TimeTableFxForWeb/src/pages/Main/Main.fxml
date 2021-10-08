@@ -31,7 +31,7 @@
                         <DropShadow />
                      </effect>
                      <children>
-                        <JFXHamburger layoutX="5.0" layoutY="14.0" />
+                        <JFXHamburger id="handOnOver" fx:id="showChatButton" layoutX="5.0" layoutY="14.0" />
                      </children>
                   </AnchorPane>
                   <VBox layoutX="6.0" layoutY="48.0" prefHeight="355.0" prefWidth="182.0" spacing="5.0">

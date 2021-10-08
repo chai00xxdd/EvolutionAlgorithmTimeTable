@@ -83,12 +83,12 @@
             <Font size="27.0" />
          </font>
       </Label>
-      <TableView fx:id="mutationsTable" layoutX="41.0" layoutY="547.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="672.0">
+      <TableView fx:id="mutationsTable" layoutX="41.0" layoutY="547.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="686.0">
         <columns>
           <TableColumn fx:id="mutationNameColumn" prefWidth="121.0" text="Mutation Name" />
           <TableColumn fx:id="mutationProbalityColumn" prefWidth="103.0" text="Probality" />
             <TableColumn fx:id="mutationsParamsColumn" prefWidth="297.0" text="Parameters" />
-            <TableColumn fx:id="mutationDeleteColumn" prefWidth="148.0" text="Delete" />
+            <TableColumn fx:id="mutationDeleteColumn" prefWidth="142.0" text="Delete" />
         </columns>
       </TableView>
       <ComboBox fx:id="mutationComboBox" layoutX="40.0" layoutY="779.0" prefWidth="150.0" />

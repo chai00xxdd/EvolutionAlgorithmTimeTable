@@ -239,6 +239,7 @@ public class AlgorithmConfigurationController implements Initializable {
 			prepare();
 			populationErrorLabel.setText("updated Population Succesfully");
 		} catch (Exception e) {
+			prepare();
 			populationErrorLabel.setText(e.getMessage());
 		}
     }
@@ -254,9 +255,11 @@ public class AlgorithmConfigurationController implements Initializable {
     	
     	try {
 			client.AddOrUpdateSelection(problemId, new SelectionDTO(selectionName,ellitism,parameter));
+			clearErrors();
 			selectionErrorLabel.setText("updated selection Succesfully");
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			//prepare();
 			selectionErrorLabel.setText(e.getMessage());
 		}
 

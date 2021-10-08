@@ -17,7 +17,7 @@
       <TableView fx:id="entityTable" maxHeight="500.0" maxWidth="600.0" minHeight="-Infinity" minWidth="-Infinity" prefHeight="266.0" prefWidth="332.0" VBox.vgrow="ALWAYS">
         <columns>
           <TableColumn fx:id="entityIdColumn" editable="false" prefWidth="121.0" text="id" />
-          <TableColumn fx:id="entityNameColumn" editable="false" prefWidth="268.0" text="name" />
+          <TableColumn fx:id="entityNameColumn" editable="false" prefWidth="259.0" text="name" />
         </columns>
          <VBox.margin>
             <Insets bottom="20.0" left="20.0" right="20.0" />
